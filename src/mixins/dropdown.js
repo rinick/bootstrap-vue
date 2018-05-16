@@ -90,9 +90,7 @@ export default {
     this.setTouchStart(false)
     this.removePopper()
   },
-  /* istanbul ignore next: not easy to test */
   beforeDestroy () {
-    this.visible = false
     this.setTouchStart(false)
     this.removePopper()
   },
@@ -151,6 +149,7 @@ export default {
       }
 
       this.setTouchStart(true)
+      this.listenClickOut()
       this.$emit('shown')
 
       // Focus on the first item on show
